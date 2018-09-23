@@ -37,57 +37,62 @@
 
 							<!-- Text -->
 								<section>
-								<p><b>FormFit takes accelerometer data during your run and uses it to identify common running form issues.</b></p>
+								<h3>FormFit takes accelerometer data during your run and uses it to identify common running form issues.</h3>
+								<br/>
 								</section>
 
 									<h2>Pelvic Tilt</h2>
-									<p>Anterior pelvic tilt -- a forward rotation of the hips -- is widely associated with back pain, especially when running.
+									<p><b>Anterior pelvic tilt -- a forward rotation of the hips -- is widely associated with back pain, especially when running.
 										Fixing this tilt can help with a variety of other running form issues. Figure 1 shows a person with an upright form,
 										while Figure 2 shows a person tilting forward.
- 									</p>
+ 									</b></p>
 									<div class="row">
-									  <div class="column">
-									    <img src="images/vienna_notilt.jpg" alt="" hspace="50" width=300 height=250>
+										<div class="column">
+											<img src="images/vienna_notilt(1).jpg" alt=""  width=300 height=250>
 											<figcaption><i>Figure 1: Standing with no tilt</i></figcaption>
-									  </div>
+										</div>
 									  <div class="column">
 									   <img src="images/vienna_tilt.jpg" alt="" width=300 height=250>
 										 <figcaption><i>Figure 2: Standing with tilted form</i></figcaption>
 									  </div>
 									</div>
 									<br/>
-									<p>FormFit uses data from the accelerometer on
+									<p><b>FormFit uses data from the accelerometer on
 									the lower back to identify changes in Z-axis acceleration that indicate a pelvic tilt. Our algorithm puts the
 									Z-axis accelerometer data from the back sensor through a low-pass filter that takes out noise associated with
 									movement due to your stride. It then finds the average magnitude of the acceleration in the Z-axis and compares it
 									to a threshold that we’ve found to be indicative of tilting.
-								</p>
+								  </b></p>
 									<center><img src="images/tilt_detect.png" alt="" width=600 height=440><figcaption><i>Figure 3: Output of the tilt detection program</i></figcaption></center>
 
 									<br/>
 
 									<h2>Stride Frequency</h2>
-									<p>Overstriding is associated with an increased risk of shin splints -- those with a longer stride tend to have their foot farther out in front of them when they land, increasing risk of heel striking and increasing strain on the shins. One way to help this is to shorten the stride and increase stride frequency. FormFit detects your stride frequency so you can work to increase it.
-									Our algorithm takes the Fourier transform of the X-acceleration of the ankle accelerometer and finds the most prominent frequency -- this corresponds to the strides per second of one leg. This number is then converted to strides per minute, the metric most commonly used to describe stride rate in the running community.</p>
+									<p><b>Overstriding is associated with an increased risk of shin splints -- those with a longer stride tend to have their foot farther out in front of them when they land, increasing risk of heel striking and increasing strain on the shins. One way to help this is to shorten the stride and increase stride frequency. FormFit detects your stride frequency so you can work to increase it.
+									Our algorithm takes the Fourier transform of the X-acceleration of the ankle accelerometer and finds the most prominent frequency -- this corresponds to the strides per second of one leg. This number is then converted to strides per minute, the metric most commonly used to describe stride rate in the running community.
+								</b></p>
 
-									<center><img src="images/stride_freq.png" alt="" width=600 height=440><figcaption>Figure 4: Output of the stride frequency program</figcaption></center>
+									<center><img src="images/stride_freq.png" alt="" width=600 height=440><figcaption><i>Figure 4: Output of the stride frequency program</i></figcaption></center>
 
 								 <br/>
 
 								 <h2>Heel Strike</h2>
-								 <p>When running, landing sharply on your heel can cause unnecessary stress on your shins and knees, causing damage over time. FormFit detects these “heel strikes” using accelerometer data from the ankle, comparing the spike in acceleration caused by the foot landing to a threshold magnitude that our testing has found to be associated with heel striking. If these exaggerated acceleration peaks are found to be occurring frequently at a rate similar to your stride rate, our algorithm reports that you have been heel striking. </p>
+								 <p><b>When running, landing sharply on your heel can cause unnecessary stress on your shins and knees, causing damage over time. FormFit detects these “heel strikes” using accelerometer data from the ankle, comparing the spike in acceleration caused by the foot landing to a threshold magnitude that our testing has found to be associated with heel striking. If these exaggerated acceleration peaks are found to be occurring frequently at a rate similar to your stride rate, our algorithm reports that you have been heel striking. </b></p>
 
 								<div class="row">
 									<div class="column">
 										<img src="images/NoStrike.gif" alt="" width=340 height=250>
-										<figcaption>Figure 5: Running gently on the balls of the feet</figcaption>
+										<figcaption><i>Figure 5: Running gently on the balls of the feet</i></figcaption>
 									</div>
 									<div class="column">
 									 <img src="images/Strike.gif" alt="" width=340 height=250>
-									 <figcaption>Figure 6: Striking the heel forcefully when running</figcaption>
+									 <figcaption><i>Figure 6: Striking the heel forcefully when running</i></figcaption>
 									</div>
 								</div>
-								<p>Stuffffffffff</p>
+								<br/>
+								<p><b>To find whether or not you are heel striking, we find the peaks in the time domain that are greater than
+									50 ms<sup>2</sup> in amplitude. If the frequency of those strikes matches your stride frequency (the we calculated earlier), then
+								this is considered heel striking. </b></p>
 								<center><img src="images/strike_detect.png" alt="" width=600 height=440></center>
 
 							 </section>
