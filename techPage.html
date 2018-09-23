@@ -22,6 +22,7 @@
 						<li><a href="index.html">Home</a></li>
 						<li><a href="description.html">How to use FormFit</a></li>
 						<li><a href="techPage.html" class="active">How FormFit works</a></li>
+						<li><a href="about.html">About us</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -33,22 +34,72 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">How FormFit works</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<p>To use FormFit, attached the phone sensors to your ankle and lower back as indicated in the diagram below.</p>
-							<p></p>
+
+							<!-- Text -->
+								<section>
+								<p><b>FormFit takes accelerometer data during your run and uses it to identify common running form issues.</b></p>
+								</section>
+
+									<h2>Pelvic Tilt</h2>
+									<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Anterior pelvic tilt -- a forward rotation of the hips -- is widely associated with back pain, especially when running. Fixing this tilt can help with a variety of other running form issues. FormFit uses data from the accelerometer on the lower back to identify changes in Z-axis acceleration that indicate a pelvic tilt. Our algorithm puts the Z-axis accelerometer data from the back sensor through a low-pass filter that takes out noise associated with movement due to your stride. It then finds the average magnitude of the acceleration in the Z-axis and compares it to a threshold that we’ve found to be indicative of tilting.
+ 									</p>
+									<div class="row">
+									  <div class="column">
+									    <img src="images/pic04.jpg" alt="" hspace="50" width=300 height=300>
+									  </div>
+									  <div class="column">
+									   <img src="images/pic04.jpg" alt="" width=300 height=300>
+									  </div>
+									  <div class="column">
+									    <img src="images/pic04.jpg" alt="" width=300 height=300>
+									  </div>
+									</div>
+									<br/>
+
+									<h2>Stride Frequency</h2>
+									<p>Overstriding is associated with an increased risk of shin splints -- those with a longer stride tend to have their foot farther out in front of them when they land, increasing risk of heel striking and increasing strain on the shins. One way to help this is to shorten the stride and increase stride frequency. BLANK detects your stride frequency so you can work to increase it.
+									Our algorithm takes the Fourier transform of the X-acceleration of the ankle accelerometer and finds the most prominent frequency -- this corresponds to the strides per second of one leg. This number is then converted to strides per minute, the metric most commonly used to describe stride rate in the running community.</p>
+
+								 <div class="row">
+									 <div class="column">
+										 <img src="images/pic04.jpg" alt="" hspace="50" width=300 height=300>
+									 </div>
+									 <div class="column">
+										<img src="images/pic04.jpg" alt="" width=300 height=300>
+									 </div>
+									 <div class="column">
+										 <img src="images/pic04.jpg" alt="" width=300 height=300>
+									 </div>
+								 </div>
+
+								 <h2>Heel Strike</h2>
+								 <p>When running, landing sharply on your heel can cause unnecessary stress on your shins and knees, causing damage over time. BLANK detects these “heel strikes” using accelerometer data from the ankle, comparing the spike in acceleration caused by the foot landing to a threshold magnitude that our testing has found to be associated with heel striking. If these exaggerated acceleration peaks are found to be occurring frequently at a rate similar to your stride rate, our algorithm reports that you have been heel striking. </p>
+
+								<div class="row">
+									<div class="column">
+										<img src="images/pic04.jpg" alt="" hspace="50" width=300 height=300>
+									</div>
+									<div class="column">
+									 <img src="images/pic04.jpg" alt="" width=300 height=300>
+									</div>
+									<div class="column">
+										<img src="images/pic04.jpg" alt="" width=300 height=300>
+									</div>
+								</div>
+							 </section>
+
 						</div>
 					</section>
 
-			</div>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; 2018 Lauren Anfenson & Vienna Scheyer</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-				</div>
-			</footer>
+			<!-- Footer -->
+				<footer id="footer" class="wrapper style1-alt">
+					<div class="inner">
+						<ul class="menu">
+							<li>&copy; 2018 Lauren Anfenson & Vienna Scheyer</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
